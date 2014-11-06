@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
     @restaurant = Restaurant.new
-    @restaurants = current_user.restaurants
+    @restaurants = Restaurant.all
   end
 end

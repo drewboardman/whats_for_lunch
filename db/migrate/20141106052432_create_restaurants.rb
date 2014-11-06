@@ -3,7 +3,7 @@ class CreateRestaurants < ActiveRecord::Migration
     create_table :restaurants do |t|
       t.string :name
       t.string :address
-      t.integer :rating
+      t.integer :score
       t.belongs_to :user, index: true
 
       t.timestamps
