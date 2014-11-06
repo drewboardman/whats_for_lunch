@@ -1,0 +1,17 @@
+<div class="container">
+	<div class = 'row'>
+		<div class="col-lg-8">
+			<h4>Add a Restaurant</h4>
+			<%= form_for @restaurant do |form| %>
+				<%= form.text_field  :name, placeholder: 'Name of restaurant' %>
+				<%= form.text_field  :address, placeholder: 'Address' %>
+				<%= form.submit 'Submit' %>
+			<% end %>
+		</div>
+
+		<div class="col-lg-4">
+		<h4>Restaurants</h4>
+			<%= render @restaurants %>
+		</div>
+	</div>
+</div>
