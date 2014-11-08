@@ -5,7 +5,6 @@
 			<%= form_for @restaurant do |form| %>
 				<%= form.text_field  :name, placeholder: 'Name of restaurant' %>
 				<%= form.text_field  :address, placeholder: 'Address' %>
-				<%= form.select :rating, 1..5 %>
 				<%= form.submit 'Submit' %>
 			<% end %>
 		</div>

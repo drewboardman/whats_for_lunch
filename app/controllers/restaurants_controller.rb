@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
-
+  before_filter :check_logged_in_user
+  
   def new
     @restaurant = Restaurant.new
   end
@@ -23,4 +24,5 @@ private
   def restaurant_parameters
     params.require(:restaurant).permit(:name, :address)
   end
+
 end

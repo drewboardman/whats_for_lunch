@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     user = authenticate_session(session_params)
+    p user
 
     if sign_in(user)
       redirect_to root_path
