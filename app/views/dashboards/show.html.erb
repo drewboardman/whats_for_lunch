@@ -1,17 +1,26 @@
 <div class="container">
-	<div class = 'row'>
-		<div class="col-lg-8">
-			<h4>Add a Restaurant</h4>
-			<%= form_for @restaurant do |form| %>
-				<%= form.text_field  :name, placeholder: 'Name of restaurant' %>
-				<%= form.text_field  :address, placeholder: 'Address' %>
-				<%= form.submit 'Submit' %>
-			<% end %>
-		</div>
-
+<section id="intro" class="section intro-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>SpringBot Lunch App</h1>
+                <p>This is a sample app created by Drew Boardman</p>
+                <a class="btn btn-default page-scroll" href="#about">View Restaurants List</a>
+            </div>
+        </div>
+    </div>
+</section>
+	<div class="row">
 		<div class="col-lg-4">
 		<h4>Restaurants</h4>
 			<%= render @restaurants %>
+		</div>
+	</div>
+
+	<div class = 'row'>
+		<div class="col-lg-8">
+			<h4>Add a Restaurant</h4>
+				<%= render 'restaurants/add' %>
 		</div>
 	</div>
 </div>
