@@ -1,25 +1,36 @@
+    <tbody>
+    	<tr>
 <%= div_for restaurant do %>
+	<td>
 	<%= link_to restaurant.name, restaurant %>
+	</td>
+	<td>
 	<%= restaurant.address %>
-	<p>Last Visited: </p>
+	</td>
+	<td>
 	<%= Visit.where(user_id: current_user.id, restaurant_id: restaurant.id).first.try(:last_visit)%>
-	<p>User Rating: </p>
+	</td>
+	<td>
 	<%= Rating.where(user_id: current_user.id, restaurant_id: restaurant.id).first.try(:score) %>
-	<p>Average User Rating: </p>
+	</td>
+	<td>
 	<%= Rating.where(restaurant_id: restaurant.id).average(:score) %>
-	
+	</td>
+	<td>
 	<%= form_for Rating.new do |form| %>
 		<%= form.hidden_field :user_id, value: current_user.id %>
 		<%= form.hidden_field :restaurant_id, value: restaurant.id %>
 		<%= form.select :score, (1..5) %>
 		<%= form.submit "Submit score" %>
 	<% end %>
-
-
+	</td>
+	<td>
 	<%= form_for Visit.new do |form| %>
 		<%= form.hidden_field :user_id, value: current_user.id %>
 		<%= form.hidden_field :restaurant_id, value: restaurant.id %>
 		<%= form.date_field :last_visit, placeholder: "Last Visited" %>
 		<%= form.submit "Submit Date" %>
 	<% end %>
+	</td>
 <% end %>
+		</tr>

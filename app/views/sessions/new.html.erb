@@ -1,13 +1,16 @@
-<%= form_for :session, url: session_path do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.submit "Sign in" %>
-  </div>
+
+
+<%= simple_form_for(:session, :url => session_path, :defaults => { :wrapper_html => {:class => 'form-group' }, :input_html => { :class => 'form-control' } }) do |form| %>
+    <div class="input-group">
+      <p>       
+        <%= form.input :email %>
+      </p>
+      <p>
+        
+        <%= form.input :password %>
+      </p>
+    </div>
+    <p><br />
+      <%= form.button :submit %>
+    </p>
 <% end %>
