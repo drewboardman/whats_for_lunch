@@ -1,3 +1,20 @@
-<div class="container">
-	<%= render @restaurant %>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-bordered">
+				<thead>
+			        <tr>
+			            <th>Restaurant</th>
+			            <th>Address</th>
+			            <th>Last Visited</th>
+			            <th>Your Score</th>
+			            <th>Average User Score</th>
+			            <th>Change Score</th>
+			            <th>Edit Last Visit</th>
+			        </tr>
+			    </thead>
+					<%= render @restaurant %>
+				</table>
+            </div>
+        </div>
+    </div>
