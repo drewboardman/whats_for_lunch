@@ -1,6 +1,8 @@
 <%= div_for restaurant do %>
 	<%= link_to restaurant.name, restaurant %>
 	<%= restaurant.address %>
+	<p>Last Visited: </p>
+	<%= Visit.where(user_id: current_user.id, restaurant_id: restaurant.id).first.try(:last_visit)%>
 	<p>User Rating: </p>
 	<%= Rating.where(user_id: current_user.id, restaurant_id: restaurant.id).first.try(:score) %>
 	<p>Average User Rating: </p>
@@ -10,5 +12,12 @@
 		<%= form.hidden_field :restaurant_id, value: restaurant.id %>
 		<%= form.select :score, (1..5) %>
 		<%= form.submit "Submit Rating" %>
+	<% end %>
+
+	<%= form_for Visit.new do |form| %>
+		<%= form.hidden_field :user_id, value: current_user.id %>
+		<%= form.hidden_field :restaurant_id, value: restaurant.id %>
+		<%= form.date_field :last_visit, placeholder: "Last Visited" %>
+		<%= form.submit "Submit Date" %>
 	<% end %>
 <% end %>
