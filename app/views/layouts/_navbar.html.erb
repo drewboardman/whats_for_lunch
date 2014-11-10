@@ -20,6 +20,9 @@
                     <li>
                     	<%=  link_to 'Add a Restaurant', new_restaurant_path, :class => 'page-scroll'%>
                     </li>
+                    <li>
+                      <%= link_to 'Restaurants', restaurants_path %>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                         <% if signed_in? %>

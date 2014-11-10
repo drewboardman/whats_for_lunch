@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_filter :check_logged_in_user
+  before_filter :check_logged_in_user, except: [:index, :show]
   
   def new
     @restaurant = Restaurant.new

@@ -1,4 +1,4 @@
-<%= simple_form_for @restaurant, :defaults => { :wrapper_html => {:class => 'form-group' }, :input_html => { :class => 'form-control' } } do |form| %>
+<%= simple_form_for Restaurant.new, :defaults => { :wrapper_html => {:class => 'form-group' }, :input_html => { :class => 'form-control' } } do |form| %>
 		<div class="input-group">
 			<p>				
 				<%= form.input :name %>

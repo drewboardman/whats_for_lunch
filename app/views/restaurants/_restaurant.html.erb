@@ -17,12 +17,7 @@
 	<%= Rating.where(restaurant_id: restaurant.id).average(:score) %>
 	</td>
 	<td>
-	<%= form_for Rating.new do |form| %>
-		<%= form.hidden_field :user_id, value: current_user.id %>
-		<%= form.hidden_field :restaurant_id, value: restaurant.id %>
-		<%= form.select :score, (1..5) %>
-		<%= form.submit "Submit score" %>
-	<% end %>
+	<%= render 'ratings/ratings_form', restaurant: restaurant %>
 	</td>
 	<td>
 	<%= form_for Visit.new do |form| %>
