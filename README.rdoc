@@ -4,6 +4,7 @@ This is Drew Boardman's entry for the SpringBot interview coding assignment. A l
 * Restaurants added are site wide - allowing for multiple users to benefit from all ratings.
 * In addition to the user's individual ratings, restaurants are listed with the average rating among all users (which is one metric in determining the recommended restaurant)
 * Restaurants can be rated 1-5, and ratings can be updated in user's change their mind about a particular restaurant. Rating is a seperate Model and table. It contains reference ids to User and Restaurant.
+* Users can edit the Name and Address field of the restaurants.
 * Visited in another Model and table as well, with the same relationships as Rating. The date is stored as a date_field and is compared with the current time to help determine the recommendation.
 * The root url of the app is dashboards#show (unless the signed_in? filter brings you to the sign in page). The recommended restaurant is among the things on the dashboard.
 * The front-end uses Bootstrap and responsive design.
