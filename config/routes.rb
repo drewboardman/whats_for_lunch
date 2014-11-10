@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :ratings, only: [:create, :update]
   resources :visits, only: [:create, :update]
-  resources :restaurants, only: [:new, :create, :show, :index ]
+  resources :restaurants, only: [:new, :create, :show, :index, :update, :edit ]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

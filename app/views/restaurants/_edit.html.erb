@@ -1,0 +1,13 @@
+<%= simple_form_for @restaurant, :defaults => { :wrapper_html => {:class => 'form-group' }, :input_html => { :class => 'form-control' } } do |form| %>
+		<div class="input-group">
+			<p>				
+				<%= form.input :name %>
+			</p>
+			<p>
+				<%= form.input :address %>
+			</p>
+		</div>
+		<p><br />
+			<%= form.button :submit %>
+		</p>
+<% end %>
