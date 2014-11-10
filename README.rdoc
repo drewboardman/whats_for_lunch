@@ -1,4 +1,4 @@
-== README
+== What's for Lunch?
 
 This is Drew Boardman's entry for the SpringBot interview coding assignment. A list of the app's feature are below:
 * Restaurants added are site wide - allowing for multiple users to benefit from all ratings.
