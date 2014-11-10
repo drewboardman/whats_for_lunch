@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is Drew Boardman's entry for the SpringBot interview coding assignment. A list of the app's feature are below:
 
-Things you may want to cover:
+ * Restaurants added are site wide - allowing for multiple users to benefit from all ratings.
+ * In addition to the user's individual ratings, restaurants are listed with the average rating among all users (which is one metric in determining the recommended restaurant)
+ * Restaurants can be rated 1-5, and ratings can be updated in user's change their mind about a particular restaurant. Rating is a seperate Model and table. It contains reference ids to User and Restaurant.
+ * Visited in another Model and table as well, with the same relationships as Rating. The date is stored as a date_field and is compared with the current time to help determine the recommendation.
+ * The root url of the app is dashboards#show (unless the signed_in? filter brings you to the sign in page). The recommended restaurant is among the things on the dashboard.
+ * The front-end uses Bootstrap and responsive design.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Recommendation Feature:
+ * The User model holds the logic for the recommendation.
+ * A size=3 array is created holding the top 3 rated (average rating among all users) restaurants.
+ * The last_day? method returns a boolean. True represents a restaurant that has been visited in the last 24 hours. These restaurants will remain in the top_three array but will not be displayed as a recommendation.
+ * A random/eligible index from the top_three array will be displayed as the recommended restaurant.

@@ -5,9 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-users = User.create([{ username: 'asamarchi', email: 'asamarchi@gmail.com', password_digest: "1234"},
- { username: 'dboardman', email: 'dboardman3@gmail.com', password_digest: "1234"},
- { username: 'phong', email: 'phong@gmail.com', password_digest: "1234"}])
 
-restaurants = Restaurant.create([{name: 'Moes', address: "5th Street"}, 
-  {name: 'Starbucks', address: "Druid Hills"}])
+restaurants = Restaurant.create([{name: "Moes", address: "5th Street"},
+  {name: "Starbucks", address: "Druid Hills"},
+  {name: "McDonald's", address: "Piedmont Ave."},
+  {name: "Burger King", address: "Peachtree Rd."},
+  {name: "Green Sprout", address: "Piedmont Ave."},
+  {name: "Panera Bread", address: "Monroe Ave."},
+  {name: "Papa John's", address: "10th St."}])
