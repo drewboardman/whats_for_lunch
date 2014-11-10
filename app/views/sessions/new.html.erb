@@ -1,4 +1,6 @@
-
+<div class="container">
+  
+<h1>Sign In</h1>
 
 <%= simple_form_for(:session, :url => session_path, :defaults => { :wrapper_html => {:class => 'form-group' }, :input_html => { :class => 'form-control' } }) do |form| %>
     <div class="input-group">
@@ -11,6 +13,7 @@
       </p>
     </div>
     <p><br />
-      <%= form.button :submit %>
+      <%= form.button :submit, "Sign In" %>
     </p>
 <% end %>
+</div>

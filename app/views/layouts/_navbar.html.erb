@@ -14,6 +14,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <% if signed_in? %>
                     <li class="hidden">
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
@@ -23,6 +24,7 @@
                     <li>
                       <%= link_to 'Restaurants', restaurants_path %>
                     </li>
+                    <% end %>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                         <% if signed_in? %>
