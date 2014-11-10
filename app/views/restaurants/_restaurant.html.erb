@@ -23,7 +23,7 @@
 	<%= form_for Visit.new do |form| %>
 		<%= form.hidden_field :user_id, value: current_user.id %>
 		<%= form.hidden_field :restaurant_id, value: restaurant.id %>
-		<%= form.date_field :last_visit, placeholder: "Last Visited" %>
+		<%= form.date_field :last_visit, placeholder: "Last Visited", :value => Time.now.strftime('%Y-%m-%d') %>
 		<%= form.submit "Submit Date" %>
 	<% end %>
 	</td>
